@@ -1,0 +1,57 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #0b2f1a;
+  --ivory: #f6f1e6;
+  --text: #1a2019;
+  --muted: #8a857a;
+}
+
+html {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--ivory);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--ivory);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section-offset {
+  scroll-margin-top: 6rem;
+}
+
+::selection {
+  background-color: rgba(11, 47, 26, 0.85);
+  color: var(--ivory);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+@layer utilities {
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}

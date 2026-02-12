@@ -458,13 +458,14 @@ function App() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
               <h2 id="about-title" className="font-display text-3xl text-brand md:text-4xl">L’expérience textile durable made in Témara</h2>
               <p className="mt-6 text-lg text-muted">
-                Situé à deux minutes de la corniche, {brandName} combine laboratoires d’analyse de l’eau, tunnels UV et équipes couture pour prolonger la durée de vie de vos pièces. Nous privilégions des tensioactifs biosourcés, récupérons 82 % de l’énergie thermique et valorisons l’eau grise pour arroser les espaces verts voisins.
+                ITRI Clean réinvente le pressing éco-responsable pour le linge du quotidien, les vêtements délicats et le textile d’ameublement. Notre promesse : le luxe au prix juste, avec un soin précis qui prolonge la vie de vos pièces tout en limitant fortement l’impact sur l’environnement.
               </p>
-              <ul className="mt-6 space-y-3 text-muted">
-                <li>• Traçabilité de chaque article via QR code et historique de soins</li>
-                <li>• Conseils personnalisés pour les résidences premium de Témara et Rabat</li>
-                <li>• Partenariats hôtels-boutiques & villas avec protocole hygiène hôtelier</li>
-              </ul>
+              <p className="mt-5 text-lg text-muted">
+                Forts de plus de 15 ans d’expérience, nous combinons savoir-faire métier, innovation et technologie au service du client pour garantir un résultat impeccable, constant et maîtrisé.
+              </p>
+              <p className="mt-5 text-lg text-muted">
+                Grâce à des procédés non toxiques et une approche moderne du soin textile — sans perlo (sans perchloroéthylène) — nous préservons vos articles, votre santé et celle de nos équipes, tout en valorisant une durabilité réelle, article après article.
+              </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2" data-animate>
               {pillars.map((pillar) => (

@@ -47,30 +47,49 @@ const pillars = [
   },
 ] as const
 
-const services = [
+const serviceChecklist = [
+  'Écologique',
+  'Sans produits toxiques',
+  'Hypoallergénique',
+  'Délicat pour les tissus',
+  'Respecte les couleurs',
+] as const
+
+const serviceBlocksLeft = [
   {
-    title: 'Programme Aquaflow',
-    description:
-      'Cycle à basse température, biotechnologie enzymatique et séchage sur cintres pour préserver les fibres nobles.',
-    icon: 'water',
+    title: 'Pressing naturel',
+    subtitle: 'Aqua nettoyage',
+    icon: 'cleaning',
   },
   {
-    title: 'Finishing Studio',
-    description:
-      'Repassage vapeur vertical, détrompe plis et finitions couture pour silhouettes parfaitement alignées.',
-    icon: 'sparkles',
+    title: 'Ameublement',
+    description: 'Housses de canapé, rideaux, voilages, matelas…',
+    icon: 'sofa',
   },
   {
-    title: 'Garde-robe business',
-    description:
-      'Chemises, costumes et tenues d’hospitalité préparés avec traçabilité digitale et housses respirantes.',
-    icon: 'shield',
+    title: 'Suivi de vos linges',
+    description: 'En temps réel &',
+    detail: 'Pickup & Delivery 24h',
+    subtle: 'via notre box',
+    icon: 'tracking',
+  },
+] as const
+
+const serviceBlocksRight = [
+  {
+    title: 'Blanchisserie',
+    description: 'Draps, nappes, couettes, serviettes…',
+    icon: 'wash',
   },
   {
-    title: 'Maison & décor',
-    description:
-      'Linge de lit grand format, voilages et tapis fins lavés à l’eau structurée et séchés en flux laminaire.',
-    icon: 'hand',
+    title: 'Entretien tapis',
+    description: 'de tout type et de toute taille',
+    icon: 'towels',
+  },
+  {
+    title: 'Service Entreprises',
+    description: 'Collaborations B2B',
+    icon: 'handshake',
   },
 ] as const
 
@@ -173,6 +192,82 @@ const Icon = ({ name, className }: { name: IconName; className?: string }) => {
         <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
           <path d="M3 7 12 3l9 4-9 4Z" strokeLinecap="round" strokeLinejoin="round" />
           <path d="m3 7 9 4v10L3 17Zm18 0-9 4v10l9-4Z" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
+
+
+type ServiceIconName = 'cleaning' | 'sofa' | 'tracking' | 'wash' | 'towels' | 'handshake' | 'van' | 'hanger'
+
+const ServiceGlyph = ({ name, className }: { name: ServiceIconName; className?: string }) => {
+  switch (name) {
+    case 'cleaning':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="4" width="16" height="16" rx="3" />
+          <circle cx="12" cy="12" r="4" />
+          <path d="M8 4v3M16 4v3" strokeLinecap="round" />
+        </svg>
+      )
+    case 'sofa':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M4 11a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H4Z" />
+          <path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+          <path d="M5 16v3M19 16v3" strokeLinecap="round" />
+        </svg>
+      )
+    case 'tracking':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="3" width="12" height="16" rx="2" />
+          <path d="M8 8h4M8 12h4" strokeLinecap="round" />
+          <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 13h2l2 2v4h-4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'wash':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" />
+          <circle cx="12" cy="12.5" r="4.5" />
+          <path d="M7 7h2M11 7h6" strokeLinecap="round" />
+        </svg>
+      )
+    case 'towels':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="11" width="16" height="8" rx="2" />
+          <path d="M7 11V8a3 3 0 0 1 3-3h5a2 2 0 0 1 2 2v4" />
+          <path d="M8 15h8" strokeLinecap="round" />
+        </svg>
+      )
+    case 'handshake':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="m3 12 4-4 4 3 2-1 3 2 5-3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m8 14 2 2a2 2 0 0 0 2.8 0l2.2-2.2a2 2 0 0 1 2.8 0L20 15" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'van':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M3 8h12v8H3Z" />
+          <path d="M15 11h3l3 3v2h-6" />
+          <circle cx="8" cy="17" r="1.8" />
+          <circle cx="18" cy="17" r="1.8" />
+        </svg>
+      )
+    case 'hanger':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M12 6a2 2 0 1 0-2-2" strokeLinecap="round" />
+          <path d="M10 4a3.5 3.5 0 0 1 3.5 3.5v1L21 13a1 1 0 0 1-.5 1.9H3.5A1 1 0 0 1 3 13l7.5-4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M17 11.8 12 8.8 7 11.8" strokeLinecap="round" />
         </svg>
       )
     default:
@@ -490,27 +585,60 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="section-offset rounded-[36px] border border-brand/10 bg-brand/5 p-8 md:p-12" aria-labelledby="services-title">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-4" data-animate>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Services</p>
-              <h2 id="services-title" className="font-display text-3xl text-brand md:text-4xl">Des rituels taillés pour vos pièces iconiques</h2>
-              <p className="text-muted md:text-lg">
-                Chaque prestation est calibrée sur mesure : température, dosage et pression sont adaptés à la fibre, puis validés par un second opérateur. Nous couvrons les dressings privés, conciergeries d’immeubles et yachts amarrés à Harhoura.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {services.map((service) => (
-                <article key={service.title} className="fade-in-up rounded-[30px] border border-muted/15 bg-white/80 p-6 shadow-soft/20" data-animate>
-                  <div className="flex items-center gap-4 text-brand">
-                    <span className="rounded-2xl bg-brand/10 p-3">
-                      <Icon name={service.icon as IconName} className="h-6 w-6" />
-                    </span>
-                    <h3 className="text-lg font-semibold">{service.title}</h3>
-                  </div>
-                  <p className="mt-4 text-sm text-muted">{service.description}</p>
+        <section id="services" className="section-offset service-infographic rounded-[36px] border border-brand/15 p-6 md:p-10" aria-labelledby="services-title">
+          <div className="infographic-wrap" data-animate>
+            <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-brand/70">Services</p>
+            <h2 id="services-title" className="mt-3 text-center font-display text-3xl text-brand md:text-4xl">Infographie services ITRI</h2>
+
+            <div className="service-layout mt-10">
+              <div className="service-col left">
+                <article className="service-block">
+                  <div className="service-pill"><ServiceGlyph name="cleaning" className="h-7 w-7" /></div>
+                  <h3>Pressing naturel</h3>
+                  <p className="service-subtitle">Aqua nettoyage</p>
+                  <ul className="service-checklist">
+                    {serviceChecklist.map((item) => (
+                      <li key={item}>✓ {item}</li>
+                    ))}
+                  </ul>
                 </article>
-              ))}
+                {serviceBlocksLeft.slice(1).map((block) => (
+                  <article key={block.title} className="service-block">
+                    <div className="service-pill"><ServiceGlyph name={block.icon} className="h-7 w-7" /></div>
+                    <h3>{block.title}</h3>
+                    {'description' in block ? <p>{block.description}</p> : null}
+                    {'detail' in block ? (
+                      <p>
+                        {block.detail} <span className="service-subtle">{block.subtle}</span>
+                      </p>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+
+              <div className="service-center">
+                <div className="center-rings" aria-hidden="true" />
+                <ServiceGlyph name="hanger" className="mx-auto h-20 w-20 text-brand" />
+                <p className="center-brand">ITRI</p>
+                <div className="center-line" />
+                <p className="center-tagline">L’atelier du pressing</p>
+              </div>
+
+              <div className="service-col right">
+                {serviceBlocksRight.map((block) => (
+                  <article key={block.title} className="service-block">
+                    <div className="service-pill"><ServiceGlyph name={block.icon} className="h-7 w-7" /></div>
+                    <h3>{block.title}</h3>
+                    {'description' in block ? <p>{block.description}</p> : null}
+                  </article>
+                ))}
+              </div>
+
+              <article className="service-bottom">
+                <div className="service-pill"><ServiceGlyph name="van" className="h-7 w-7" /></div>
+                <h3>ITRI Clean</h3>
+                <p>Collecte et Livraison express</p>
+              </article>
             </div>
           </div>
         </section>

@@ -108,8 +108,8 @@ const galleryImages = [
 ] as const
 
 const partnerLogos = [
-  { name: 'IPSO', src: 'https://logo.clearbit.com/ipsolaundry.com' },
-  { name: 'Dermatest', src: 'https://logo.clearbit.com/dermatest.com' },
+  { name: 'IPSO', src: 'https://ipsolaundry.com/wp-content/uploads/2025/05/new-favicon.webp' },
+  { name: 'Dermatest', src: 'https://dermatest.com/wp-content/uploads/2020/03/dermatest-logo-small.svg' },
   { name: 'Perchlorethylen Free', src: 'https://img.shields.io/badge/Perchlorethylene-Free-1B5E20?style=for-the-badge&logoColor=white' },
   { name: 'Eco Friendly', src: 'https://img.shields.io/badge/Eco-Friendly-2E7D32?style=for-the-badge&logo=leaflet&logoColor=white' },
 ] as const

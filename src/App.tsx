@@ -107,6 +107,8 @@ const galleryImages = [
   { src: '/gallery/gallery-6.jpg', alt: 'Espace lounge réception clients' },
 ] as const
 
+const partnerLogos = ['IPSO', 'Dermatest', 'Perchlorethylen Free', 'Eco Friendly'] as const
+
 type SectionId = (typeof navItems)[number]['id']
 type IconName = 'leaf' | 'sparkles' | 'bolt' | 'water' | 'shield' | 'hand' | 'calendar' | 'box'
 const Icon = ({ name, className }: { name: IconName; className?: string }) => {
@@ -445,7 +447,7 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="about" className="section-offset" aria-labelledby="about-title">
+        <section id="about" className="section-offset rounded-[36px] border border-muted/15 bg-white p-8 md:p-12" aria-labelledby="about-title">
           <div className="grid gap-12 md:grid-cols-2">
             <div data-animate className="fade-in-up">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
@@ -458,6 +460,18 @@ function App() {
                 <li>• Conseils personnalisés pour les résidences premium de Témara et Rabat</li>
                 <li>• Partenariats hôtels-boutiques & villas avec protocole hygiène hôtelier</li>
               </ul>
+              <div className="mt-8 overflow-hidden rounded-3xl border border-brand/20 bg-brand/5 p-4" data-animate>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand/80">Partenaires</p>
+                <div className="partner-slider mt-4" aria-label="Logos partenaires">
+                  <div className="partner-slider-track">
+                    {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                      <div key={`${logo}-${index}`} className="rounded-2xl border border-brand/20 bg-white px-4 py-3 text-sm font-semibold text-brand shadow-soft/10">
+                        {logo}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2" data-animate>
               {pillars.map((pillar) => (
@@ -473,7 +487,7 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="section-offset" aria-labelledby="services-title">
+        <section id="services" className="section-offset rounded-[36px] border border-brand/10 bg-brand/5 p-8 md:p-12" aria-labelledby="services-title">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Services</p>
@@ -497,7 +511,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="delivery" className="section-offset" aria-labelledby="delivery-title">
+        <section id="delivery" className="section-offset rounded-[36px] border border-muted/15 bg-white p-8 md:p-12" aria-labelledby="delivery-title">
           <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr]">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Delivery</p>
@@ -554,7 +568,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="gallery" className="section-offset" aria-labelledby="gallery-title">
+        <section id="gallery" className="section-offset rounded-[36px] border border-brand/10 bg-brand/5 p-8 md:p-12" aria-labelledby="gallery-title">
           <div className="flex flex-col gap-6" data-animate>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Galerie</p>
             <h2 id="gallery-title" className="font-display text-3xl text-brand md:text-4xl">Ambiances ITRI Clean</h2>
@@ -571,7 +585,7 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="contact" className="section-offset" aria-labelledby="contact-title">
+        <section id="contact" className="section-offset rounded-[36px] border border-muted/15 bg-white p-8 md:p-12" aria-labelledby="contact-title">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Contact</p>

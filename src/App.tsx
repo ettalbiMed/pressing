@@ -273,7 +273,7 @@ function App() {
     const body = `Nom: ${formData.get('name') || ''}\nTéléphone: ${formData.get('phone') || ''}\nMessage: ${
       formData.get('message') || ''
     }`
-    window.location.href = `mailto:bonjour@atlassense.ma?subject=Demande%20collecte%20Témara&body=${encodeURIComponent(body)}`
+    window.location.href = `mailto:contact@itriclean.ma?subject=Demande%20collecte%20Témara&body=${encodeURIComponent(body)}`
     event.currentTarget.reset()
   }
   return (
@@ -591,19 +591,19 @@ function App() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Contact</p>
-              <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Parlez à notre concierge textile</h2>
+              <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Nous serons heureux de vous écouter</h2>
               <p className="text-muted">
-                Atelier & box : Boulevard Hassan II, Quartier Wifaq – Témara. Zones desservies : Harhoura, Rabat Ouest, Sidi Boughaba.
+                Atelier & box : Boulevard Hassan 2, Témara. On dessert en plus de Témara, essentiellement Harhoura, Hay Riad, les Orangerais, Agdal, Souissi et régions.
               </p>
               <div className="rounded-[30px] border border-muted/20 bg-white/80 p-6 shadow-soft/30">
                 <p className="font-semibold text-brand">Horaires</p>
                 <ul className="mt-3 space-y-2 text-sm text-muted">
-                  <li>Lundi – Samedi : 7h30 - 21h30</li>
-                  <li>Dimanche : 10h - 18h (box 24/7 accessible en continu)</li>
+                  <li>Lundi – Samedi : 8h30 - 21h</li>
+                  <li>Dimanche : 10h - 20h</li>
                 </ul>
                 <div className="mt-4 space-y-1 text-sm text-brand">
                   <a href="tel:+212612345678" className="block font-semibold">+212 6 12 34 56 78</a>
-                  <a href="mailto:bonjour@atlassense.ma" className="block">bonjour@atlassense.ma</a>
+                  <a href="mailto:contact@itriclean.ma" className="block">contact@itriclean.ma</a>
                 </div>
               </div>
               <iframe
@@ -615,7 +615,7 @@ function App() {
               />
             </div>
             <div className="rounded-[32px] border border-muted/25 bg-white/90 p-6 shadow-soft/40" data-animate>
-              <h3 className="text-xl font-semibold text-brand">Brief express</h3>
+              <h3 className="text-xl font-semibold text-brand">On attends votre message</h3>
               <p className="mt-2 text-sm text-muted">
                 Détaillez vos besoins, nous répondons en moins de 15 minutes pendant les horaires d’ouverture.
               </p>

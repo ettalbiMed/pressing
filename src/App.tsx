@@ -453,8 +453,8 @@ function App() {
           </div>
         </section>
         <section id="about" className="section-offset white-bleed py-12" aria-labelledby="about-title">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div data-animate className="fade-in-up">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div data-animate className="fade-in-up md:col-span-2">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
               <h2 id="about-title" className="font-display text-3xl text-brand md:text-4xl">L’expérience textile durable made in Témara</h2>
               <p className="mt-6 text-lg text-muted">

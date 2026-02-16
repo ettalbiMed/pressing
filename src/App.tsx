@@ -473,30 +473,30 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="delivery" className="section-offset bg-white py-4" aria-labelledby="delivery-title">
-          <div className="mx-auto max-w-6xl text-center" data-animate>
-            <h2 id="delivery-title" className="font-display text-5xl font-semibold uppercase tracking-[0.04em] text-brand md:text-7xl">
+        <section id="delivery" className="section-offset bg-white py-20 md:py-28" aria-labelledby="delivery-title">
+          <div className="mx-auto max-w-[1320px] text-center" data-animate>
+            <h2 id="delivery-title" className="font-display text-[3.4rem] font-semibold uppercase leading-none tracking-[0.04em] text-brand md:text-[5.8rem]">
               ITRI CLEAN
             </h2>
-            <p className="mt-8 text-xl uppercase italic tracking-[0.04em] text-brand/85 md:text-[2.05rem]">
+            <p className="mt-9 text-[1.2rem] uppercase italic tracking-[0.03em] text-brand/80 md:text-[2.15rem] md:leading-[1.15]">
               VOTRE PRESSING ÉCO-RESPONSABLE À DOMICILE
             </p>
-            <p className="mt-4 text-lg italic text-muted">* à partir de 79Dh de commande</p>
+            <p className="mt-4 text-base italic text-muted/85 md:text-[1.1rem]">* à partir de 79Dh de commande</p>
 
-            <h3 className="mt-20 text-4xl font-semibold text-brand md:text-6xl">La propreté chez vous en 3 étapes...</h3>
-            <p className="mt-6 text-2xl text-text/80 md:text-[2.05rem]">3 étapes simples pour nettoyer vos articles</p>
+            <h3 className="mt-20 text-[2rem] font-semibold leading-tight text-brand md:text-[3.85rem]">La propreté chez vous en 3 étapes...</h3>
+            <p className="mt-6 text-xl text-text/80 md:text-[2.15rem]">3 étapes simples pour nettoyer vos articles</p>
 
-            <div className="mt-20 grid grid-cols-1 gap-y-12 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-start md:gap-x-7">
-              <article className="mx-auto flex max-w-sm flex-col items-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
-                  <svg viewBox="0 0 48 48" className="h-14 w-14" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+            <div className="mt-20 grid grid-cols-1 gap-y-14 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-start md:gap-x-10">
+              <article className="mx-auto flex max-w-[21.5rem] flex-col items-center">
+                <div className="flex h-[8.4rem] w-[8.4rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[4rem] w-[4rem]" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
                     <path d="M16.2 11.8c-1.6-1.8-4.2-2.1-6.1-.7l-2.3 1.8c-1.9 1.5-2.6 4.1-1.6 6.3 4.1 9.8 12 17.7 21.8 21.8 2.2 1 4.8.3 6.3-1.6l1.8-2.3c1.4-1.9 1.1-4.5-.7-6.1l-4.8-4.2c-1.5-1.3-3.6-1.5-5.3-.4l-2.4 1.5a30.6 30.6 0 0 1-7.6-7.6l1.5-2.4c1.1-1.7.9-3.8-.4-5.3z" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M30.5 13.2c3.2 1.3 5.8 3.9 7.1 7.1" strokeLinecap="round" />
                     <path d="M28.4 18.7a9.5 9.5 0 0 1 4.9 4.9" strokeLinecap="round" />
                   </svg>
                 </div>
-                <h4 className="mt-8 text-5xl font-semibold text-brand md:text-[2.85rem]">1-Commande</h4>
-                <p className="mt-7 text-[2rem] leading-[1.45] text-text/90 md:text-[2.25rem]">
+                <h4 className="mt-8 whitespace-nowrap text-[2rem] font-semibold text-brand md:text-[2.25rem]">1-Commande</h4>
+                <p className="mt-7 text-[1.85rem] leading-[1.42] text-text/90 md:text-[1.02rem]">
                   Réservez votre collecte par<br />
                   téléphone au{' '}
                   <a href="tel:+212522993922" className="font-medium text-brand">
@@ -512,13 +512,16 @@ function App() {
                 </p>
               </article>
 
-              <span className="hidden self-center text-7xl font-light text-brand/70 md:block" aria-hidden="true">
-                →
+              <span className="hidden self-start md:mt-[11.4rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-8 w-32 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
 
-              <article className="mx-auto flex max-w-sm flex-col items-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
-                  <svg viewBox="0 0 48 48" className="h-14 w-14" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+              <article className="mx-auto flex max-w-[21.5rem] flex-col items-center">
+                <div className="flex h-[8.4rem] w-[8.4rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[4rem] w-[4rem]" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
                     <path d="M4 29h4m-4-8h8" strokeLinecap="round" />
                     <path d="M10 15h20l9 9v11h-3" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M10 15v25h8" strokeLinecap="round" />
@@ -529,8 +532,8 @@ function App() {
                     <path d="M19.8 17.4v4.2" strokeLinecap="round" />
                   </svg>
                 </div>
-                <h4 className="mt-8 text-5xl font-semibold text-brand md:text-[2.85rem]">2-Collecte</h4>
-                <p className="mt-7 text-[2rem] leading-[1.45] text-text/90 md:text-[2.25rem]">
+                <h4 className="mt-8 whitespace-nowrap text-[2rem] font-semibold text-brand md:text-[2.25rem]">2-Collecte</h4>
+                <p className="mt-7 text-[1.85rem] leading-[1.42] text-text/90 md:text-[1.02rem]">
                   Notre livreur vient chez vous
                   <br />
                   à la date et horaire convenus
@@ -539,13 +542,16 @@ function App() {
                 </p>
               </article>
 
-              <span className="hidden self-center text-7xl font-light text-brand/70 md:block" aria-hidden="true">
-                →
+              <span className="hidden self-start md:mt-[11.4rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-8 w-32 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
 
-              <article className="mx-auto flex max-w-sm flex-col items-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
-                  <svg viewBox="0 0 48 48" className="h-14 w-14" fill="none" stroke="currentColor" strokeWidth="2.1" aria-hidden="true">
+              <article className="mx-auto flex max-w-[21.5rem] flex-col items-center">
+                <div className="flex h-[8.4rem] w-[8.4rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[4rem] w-[4rem]" fill="none" stroke="currentColor" strokeWidth="2.1" aria-hidden="true">
                     <path d="M8 17.8c10-5.1 22-5.1 32 0" strokeLinecap="round" />
                     <path d="M24 8.8v7.1" strokeLinecap="round" />
                     <path d="M19 8.8c.9 2.7 3.2 4.2 5 4.2s4.1-1.5 5-4.2" strokeLinecap="round" />
@@ -555,8 +561,8 @@ function App() {
                     <path d="M20.7 25.2h.1m6.4 0h.1m-6.4 4.9h.1m6.4 0h.1" strokeLinecap="round" />
                   </svg>
                 </div>
-                <h4 className="mt-8 text-5xl font-semibold text-brand md:text-[2.85rem]">3-Livraison</h4>
-                <p className="mt-7 text-[2rem] leading-[1.45] text-text/90 md:text-[2.25rem]">
+                <h4 className="mt-8 whitespace-nowrap text-[2rem] font-semibold text-brand md:text-[2.25rem]">3-Livraison</h4>
+                <p className="mt-7 text-[1.85rem] leading-[1.42] text-text/90 md:text-[1.02rem]">
                   Nous prenons soin de vos articles
                   <br />
                   puis nous vous les livrons à

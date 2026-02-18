@@ -282,7 +282,7 @@ function App() {
               <Icon name="leaf" className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-display text-lg text-brand">{brandName}</p>
+              <p className="text-lg font-semibold text-brand">{brandName}</p>
               <p className="text-xs text-muted">Pure care pour Témara</p>
             </div>
           </a>
@@ -355,7 +355,7 @@ function App() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-24 pt-10">
+      <main className="uniform-sections flex w-full flex-col gap-24 px-6 pb-24 pt-10">
         <section id="hero" className="section-offset" aria-label="Accueil ITRI Clean">
           <div className="relative min-h-[80vh] overflow-hidden rounded-[36px] bg-brand/60 text-ivory">
             <div className="absolute inset-0" aria-live="polite">
@@ -376,7 +376,7 @@ function App() {
             <div className="relative z-10 flex min-h-[80vh] flex-col justify-between p-8 md:p-14">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-ivory/80">Pressing éco-responsable à Témara</p>
-                <h1 className="font-display text-4xl leading-tight text-ivory md:text-5xl lg:text-6xl">
+                <h1 className="text-2xl font-semibold leading-tight text-ivory md:text-2xl lg:text-2xl">
                   {brandName}, la référence premium pour vos garde-robes et linges de maison
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg text-ivory/90">
@@ -449,7 +449,7 @@ function App() {
           <div className="grid gap-12 md:grid-cols-2">
             <div data-animate className="fade-in-up">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
-              <h2 id="about-title" className="font-display text-3xl text-brand md:text-4xl">L’expérience textile durable made in Témara</h2>
+              <h2 id="about-title" className="text-2xl font-semibold text-brand md:text-2xl">L’expérience textile durable made in Témara</h2>
               <p className="mt-6 text-lg text-muted">
                 Situé à deux minutes de la corniche, {brandName} combine laboratoires d’analyse de l’eau, tunnels UV et équipes couture pour prolonger la durée de vie de vos pièces. Nous privilégions des tensioactifs biosourcés, récupérons 82 % de l’énergie thermique et valorisons l’eau grise pour arroser les espaces verts voisins.
               </p>
@@ -477,7 +477,7 @@ function App() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Services</p>
-              <h2 id="services-title" className="font-display text-3xl text-brand md:text-4xl">Des rituels taillés pour vos pièces iconiques</h2>
+              <h2 id="services-title" className="text-2xl font-semibold text-brand md:text-2xl">Des rituels taillés pour vos pièces iconiques</h2>
               <p className="text-muted md:text-lg">
                 Chaque prestation est calibrée sur mesure : température, dosage et pression sont adaptés à la fibre, puis validés par un second opérateur. Nous couvrons les dressings privés, conciergeries d’immeubles et yachts amarrés à Harhoura.
               </p>
@@ -501,7 +501,7 @@ function App() {
           <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr]">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Delivery</p>
-              <h2 id="delivery-title" className="font-display text-3xl text-brand md:text-4xl">Collecte & dépôt 24/7, même de nuit</h2>
+              <h2 id="delivery-title" className="text-2xl font-semibold text-brand md:text-2xl">Collecte & dépôt 24/7, même de nuit</h2>
               <p className="text-muted md:text-lg">
                 Notre flotte électrique couvre toute la bande côtière de Témara avec un délai moyen de 40 minutes. La box ITRI Clean, accessible 24h/24 et 7j/7 devant l’atelier, permet de déposer ou récupérer vos pièces via QR code sécurisé, idéal pour les retours tardifs.
               </p>
@@ -557,7 +557,7 @@ function App() {
         <section id="gallery" className="section-offset" aria-labelledby="gallery-title">
           <div className="flex flex-col gap-6" data-animate>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Galerie</p>
-            <h2 id="gallery-title" className="font-display text-3xl text-brand md:text-4xl">Ambiances ITRI Clean</h2>
+            <h2 id="gallery-title" className="text-2xl font-semibold text-brand md:text-2xl">Ambiances ITRI Clean</h2>
             <p className="text-muted md:text-lg">
               Aperçu de nos cabines vapeur, de notre box autonome et de la logistique qui dessert les villas de Val d’Or, Bahia Golf Beach et les sièges d’entreprise du pôle technologique de Témara.
             </p>
@@ -575,7 +575,7 @@ function App() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Contact</p>
-              <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Parlez à notre concierge textile</h2>
+              <h2 id="contact-title" className="text-2xl font-semibold text-brand md:text-2xl">Parlez à notre concierge textile</h2>
               <p className="text-muted">
                 Atelier & box : Boulevard Hassan II, Quartier Wifaq – Témara. Zones desservies : Harhoura, Rabat Ouest, Sidi Boughaba.
               </p>

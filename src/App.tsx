@@ -421,8 +421,9 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="about" className="section-offset" aria-labelledby="about-title">
-          <div className="grid gap-12 md:grid-cols-2">
+        <section id="about" className="section-offset relative left-1/2 right-1/2 w-screen -translate-x-1/2 bg-white py-16 md:py-20" aria-labelledby="about-title">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-12 md:grid-cols-2">
             <div data-animate className="fade-in-up">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
               <h2 id="about-title" className="font-display text-3xl text-brand md:text-4xl">L’expérience textile durable made in Témara</h2>
@@ -446,6 +447,7 @@ function App() {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </section>
 
@@ -590,8 +592,9 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="contact" className="section-offset" aria-labelledby="contact-title">
-          <div className="grid gap-10 lg:grid-cols-2">
+        <section id="contact" className="section-offset relative left-1/2 right-1/2 w-screen -translate-x-1/2 bg-white py-16 md:py-20" aria-labelledby="contact-title">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Contact</p>
               <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Parlez à notre concierge textile</h2>
@@ -670,6 +673,7 @@ function App() {
                 </p>
               </form>
             </div>
+          </div>
           </div>
         </section>
       </main>

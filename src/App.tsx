@@ -473,9 +473,9 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="delivery" className="section-offset bg-white py-16 md:py-20" aria-labelledby="delivery-title">
+        <section id="delivery" className="section-offset relative left-1/2 right-1/2 w-screen -translate-x-1/2 bg-white py-16 md:py-20" aria-labelledby="delivery-title">
           <div className="mx-auto max-w-[1080px] text-center" data-animate>
-            <h2 id="delivery-title" className="font-display text-3xl font-semibold uppercase tracking-[0.08em] text-brand md:text-5xl">
+            <h2 id="delivery-title" className="font-display text-2xl font-semibold uppercase tracking-[0.08em] text-brand md:text-4xl">
               ITRI CLEAN
             </h2>
             <p className="mt-7 text-sm uppercase italic tracking-[0.24em] text-muted md:text-base">

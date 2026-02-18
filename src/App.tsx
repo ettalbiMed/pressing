@@ -74,30 +74,6 @@ const services = [
   },
 ] as const
 
-const deliverySteps = [
-  {
-    title: 'Planifiez',
-    detail: 'Choisissez le créneau qui vous arrange ou droppez vos pièces dans la box 24/7 sécurisée.',
-    time: '1 min',
-  },
-  {
-    title: 'Collecte & suivi',
-    detail: 'Coursier électrique géolocalisé, photos à l’enlèvement et notifications SMS/WhatsApp.',
-    time: 'J+0',
-  },
-  {
-    title: 'Retour express',
-    detail: 'Restitution pliée ou sur cintre sous 24 h, possibilité de retrait autonome dans la box.',
-    time: 'J+1',
-  },
-] as const
-
-const deliveryPerks = [
-  'Couverture Wifaq, Harhoura, Val d’Or et plages de Témara',
-  'Assurance textile premium incluse',
-  'Notifications multicanales et portail client',
-]
-
 const galleryImages = [
   { src: '/gallery/gallery-1.jpg', alt: 'Veste en laine sur cintre Atelier ITRI Clean' },
   { src: '/gallery/gallery-2.jpg', alt: 'Salle blanche de pressing écologique' },
@@ -497,60 +473,103 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="delivery" className="section-offset" aria-labelledby="delivery-title">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr]">
-            <div className="space-y-6" data-animate>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Delivery</p>
-              <h2 id="delivery-title" className="font-display text-3xl text-brand md:text-4xl">Collecte & dépôt 24/7, même de nuit</h2>
-              <p className="text-muted md:text-lg">
-                Notre flotte électrique couvre toute la bande côtière de Témara avec un délai moyen de 40 minutes. La box ITRI Clean, accessible 24h/24 et 7j/7 devant l’atelier, permet de déposer ou récupérer vos pièces via QR code sécurisé, idéal pour les retours tardifs.
-              </p>
-              <div className="rounded-[32px] border border-brand/10 bg-brand/5 p-6">
-                <div className="flex items-center gap-3 text-brand">
-                  <Icon name="box" className="h-6 w-6" />
-                  <h3 className="text-lg font-semibold">Box autonome Témara Centre</h3>
+        <section id="delivery" className="section-offset bg-white py-16 md:py-20" aria-labelledby="delivery-title">
+          <div className="mx-auto max-w-[1080px] text-center" data-animate>
+            <h2 id="delivery-title" className="font-display text-3xl font-semibold uppercase tracking-[0.08em] text-brand md:text-5xl">
+              ITRI CLEAN
+            </h2>
+            <p className="mt-7 text-sm uppercase italic tracking-[0.24em] text-muted md:text-base">
+              VOTRE PRESSING ÉCO-RESPONSABLE À DOMICILE
+            </p>
+            <p className="mt-4 text-xs italic text-muted">* à partir de 79Dh de commande</p>
+
+            <h3 className="mt-16 font-display text-3xl text-brand md:text-4xl">La propreté chez vous en 3 étapes...</h3>
+            <p className="mt-5 text-base text-muted md:text-lg">3 étapes simples pour nettoyer vos articles</p>
+
+            <div className="mt-14 grid grid-cols-1 gap-y-10 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-start md:gap-x-4">
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                    <path d="M16.2 11.8c-1.6-1.8-4.2-2.1-6.1-.7l-2.3 1.8c-1.9 1.5-2.6 4.1-1.6 6.3 4.1 9.8 12 17.7 21.8 21.8 2.2 1 4.8.3 6.3-1.6l1.8-2.3c1.4-1.9 1.1-4.5-.7-6.1l-4.8-4.2c-1.5-1.3-3.6-1.5-5.3-.4l-2.4 1.5a30.6 30.6 0 0 1-7.6-7.6l1.5-2.4c1.1-1.7.9-3.8-.4-5.3z" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M30.5 13.2c3.2 1.3 5.8 3.9 7.1 7.1" strokeLinecap="round" />
+                    <path d="M28.4 18.7a9.5 9.5 0 0 1 4.9 4.9" strokeLinecap="round" />
+                  </svg>
                 </div>
-                <p className="mt-3 text-sm text-muted">
-                  Badge NFC ou code envoyé sur WhatsApp, caméra HD et thermomètre connecté pour garantir l’intégrité des pièces, même lors des dépôts nocturnes.
+                <h4 className="mt-6 whitespace-nowrap text-2xl font-semibold text-brand md:text-3xl">1-Commande</h4>
+                <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
+                  Réservez votre collecte par<br />
+                  téléphone au{' '}
+                  <a href="tel:+212522993922" className="font-medium text-brand">
+                    0522993922
+                  </a>{' '}
+                  ou<br />
+                  sur WhatsApp au{' '}
+                  <a href="https://wa.me/212667638300" target="_blank" rel="noreferrer" className="font-medium text-brand">
+                    0667638300
+                  </a>
+                  <br />
+                  en suivant les instructions indiquées
                 </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {deliveryPerks.map((perk) => (
-                  <div key={perk} className="fade-in-up rounded-2xl border border-muted/20 bg-white/80 p-4 text-sm font-semibold text-brand" data-animate>
-                    {perk}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-[32px] border border-muted/20 bg-white/90 p-6 shadow-soft/40" data-animate>
-              <div className="flex items-center gap-3 text-brand">
-                <Icon name="calendar" className="h-5 w-5" />
-                <p className="text-sm font-semibold uppercase tracking-[0.3em]">Étapes</p>
-              </div>
-              <div className="mt-6 space-y-6">
-                {deliverySteps.map((step, index) => (
-                  <div key={step.title} className="fade-in-up flex gap-4" data-animate>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/10 text-sm font-semibold text-brand">
-                      {index + 1}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-semibold text-brand">{step.title}</h3>
-                        <span className="text-xs text-muted">{step.time}</span>
-                      </div>
-                      <p className="text-sm text-muted">{step.detail}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <button type="button" onClick={() => scrollToSection('contact')} className="rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ivory">
-                  Devis instantané
-                </button>
-                <a href={whatsappLink} target="_blank" rel="noreferrer" className="rounded-full border border-brand/30 px-5 py-3 text-sm font-semibold text-brand">
-                  WhatsApp concierge
-                </a>
-              </div>
+              </article>
+
+              <span className="hidden self-start md:mt-[8.9rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-6 w-20 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                    <path d="M4 29h4m-4-8h8" strokeLinecap="round" />
+                    <path d="M10 15h20l9 9v11h-3" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M10 15v25h8" strokeLinecap="round" />
+                    <path d="M28 22h8v5h-8z" strokeLinejoin="round" />
+                    <circle cx="15" cy="35" r="3.4" />
+                    <circle cx="33" cy="35" r="3.4" />
+                    <path d="M22 20.2c1.6 1 2.6 2.7 2.6 4.7 0 3.2-2.6 5.8-5.8 5.8" strokeLinecap="round" />
+                    <path d="M19.8 17.4v4.2" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h4 className="mt-6 whitespace-nowrap text-2xl font-semibold text-brand md:text-3xl">2-Collecte</h4>
+                <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
+                  Notre livreur vient chez vous
+                  <br />
+                  à la date et horaire convenus
+                  <br />
+                  pour récupérer vos articles
+                </p>
+              </article>
+
+              <span className="hidden self-start md:mt-[8.9rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-6 w-20 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.1" aria-hidden="true">
+                    <path d="M8 17.8c10-5.1 22-5.1 32 0" strokeLinecap="round" />
+                    <path d="M24 8.8v7.1" strokeLinecap="round" />
+                    <path d="M19 8.8c.9 2.7 3.2 4.2 5 4.2s4.1-1.5 5-4.2" strokeLinecap="round" />
+                    <path d="M13.3 20.8 16.2 43h15.6l2.9-22.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M17 22.5 24 18l7 4.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M24 18v22" strokeLinecap="round" />
+                    <path d="M20.7 25.2h.1m6.4 0h.1m-6.4 4.9h.1m6.4 0h.1" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h4 className="mt-6 whitespace-nowrap text-2xl font-semibold text-brand md:text-3xl">3-Livraison</h4>
+                <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
+                  Nous prenons soin de vos articles
+                  <br />
+                  puis nous vous les livrons à
+                  <br />
+                  domicile selon vos préférences
+                </p>
+              </article>
             </div>
           </div>
         </section>

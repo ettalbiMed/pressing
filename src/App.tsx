@@ -47,56 +47,51 @@ const pillars = [
   },
 ] as const
 
-const services = [
+const serviceChecklist = [
+  'Écologique',
+  'Sans produits toxiques',
+  'Hypoallergénique',
+  'Délicat pour les tissus',
+  'Respecte les couleurs',
+] as const
+
+const serviceBlocksLeft = [
   {
-    title: 'Programme Aquaflow',
-    description:
-      'Cycle à basse température, biotechnologie enzymatique et séchage sur cintres pour préserver les fibres nobles.',
-    icon: 'water',
+    title: 'Pressing naturel',
+    subtitle: 'Aqua nettoyage',
+    icon: 'cleaning',
   },
   {
-    title: 'Finishing Studio',
-    description:
-      'Repassage vapeur vertical, détrompe plis et finitions couture pour silhouettes parfaitement alignées.',
-    icon: 'sparkles',
+    title: 'Ameublement',
+    description: 'Housses de canapé, rideaux, voilages, matelas…',
+    icon: 'sofa',
   },
   {
-    title: 'Garde-robe business',
-    description:
-      'Chemises, costumes et tenues d’hospitalité préparés avec traçabilité digitale et housses respirantes.',
-    icon: 'shield',
-  },
-  {
-    title: 'Maison & décor',
-    description:
-      'Linge de lit grand format, voilages et tapis fins lavés à l’eau structurée et séchés en flux laminaire.',
-    icon: 'hand',
+    title: 'Suivi de vos linges',
+    description: 'En temps réel &',
+    detail: 'Pickup & Delivery 24h',
+    subtle: 'via notre box',
+    icon: 'tracking',
   },
 ] as const
 
-const deliverySteps = [
+const serviceBlocksRight = [
   {
-    title: 'Planifiez',
-    detail: 'Choisissez le créneau qui vous arrange ou droppez vos pièces dans la box 24/7 sécurisée.',
-    time: '1 min',
+    title: 'Blanchisserie',
+    description: 'Draps, nappes, couettes, serviettes…',
+    icon: 'wash',
   },
   {
-    title: 'Collecte & suivi',
-    detail: 'Coursier électrique géolocalisé, photos à l’enlèvement et notifications SMS/WhatsApp.',
-    time: 'J+0',
+    title: 'Entretien tapis',
+    description: 'de tout type et de toute taille',
+    icon: 'towels',
   },
   {
-    title: 'Retour express',
-    detail: 'Restitution pliée ou sur cintre sous 24 h, possibilité de retrait autonome dans la box.',
-    time: 'J+1',
+    title: 'Service Entreprises',
+    description: 'Collaborations B2B',
+    icon: 'handshake',
   },
 ] as const
-
-const deliveryPerks = [
-  'Couverture Wifaq, Harhoura, Val d’Or et plages de Témara',
-  'Assurance textile premium incluse',
-  'Notifications multicanales et portail client',
-]
 
 const galleryImages = [
   { src: '/gallery/gallery-1.jpg', alt: 'Veste en laine sur cintre Atelier ITRI Clean' },
@@ -105,6 +100,13 @@ const galleryImages = [
   { src: '/gallery/gallery-4.jpg', alt: 'Draps blancs repassés avec précision' },
   { src: '/gallery/gallery-5.jpg', alt: 'Textiles premium prêts à être livrés' },
   { src: '/gallery/gallery-6.jpg', alt: 'Espace lounge réception clients' },
+] as const
+
+const partnerLogos = [
+  { name: 'IPSO', src: 'https://ipsolaundry.com/wp-content/uploads/2025/05/new-favicon.webp' },
+  { name: 'Dermatest', src: 'https://dermatest.com/wp-content/uploads/2020/03/dermatest-logo-small.svg' },
+  { name: 'Perchlorethylen Free', src: 'https://img.shields.io/badge/Perchlorethylene-Free-1B5E20?style=for-the-badge&logoColor=white' },
+  { name: 'Eco Friendly', src: 'https://img.shields.io/badge/Eco-Friendly-2E7D32?style=for-the-badge&logo=leaflet&logoColor=white' },
 ] as const
 
 type SectionId = (typeof navItems)[number]['id']
@@ -166,6 +168,82 @@ const Icon = ({ name, className }: { name: IconName; className?: string }) => {
         <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
           <path d="M3 7 12 3l9 4-9 4Z" strokeLinecap="round" strokeLinejoin="round" />
           <path d="m3 7 9 4v10L3 17Zm18 0-9 4v10l9-4Z" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
+
+
+type ServiceIconName = 'cleaning' | 'sofa' | 'tracking' | 'wash' | 'towels' | 'handshake' | 'van' | 'hanger'
+
+const ServiceGlyph = ({ name, className }: { name: ServiceIconName; className?: string }) => {
+  switch (name) {
+    case 'cleaning':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="4" width="16" height="16" rx="3" />
+          <circle cx="12" cy="12" r="4" />
+          <path d="M8 4v3M16 4v3" strokeLinecap="round" />
+        </svg>
+      )
+    case 'sofa':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M4 11a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H4Z" />
+          <path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+          <path d="M5 16v3M19 16v3" strokeLinecap="round" />
+        </svg>
+      )
+    case 'tracking':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="3" width="12" height="16" rx="2" />
+          <path d="M8 8h4M8 12h4" strokeLinecap="round" />
+          <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 13h2l2 2v4h-4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'wash':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" />
+          <circle cx="12" cy="12.5" r="4.5" />
+          <path d="M7 7h2M11 7h6" strokeLinecap="round" />
+        </svg>
+      )
+    case 'towels':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <rect x="4" y="11" width="16" height="8" rx="2" />
+          <path d="M7 11V8a3 3 0 0 1 3-3h5a2 2 0 0 1 2 2v4" />
+          <path d="M8 15h8" strokeLinecap="round" />
+        </svg>
+      )
+    case 'handshake':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="m3 12 4-4 4 3 2-1 3 2 5-3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m8 14 2 2a2 2 0 0 0 2.8 0l2.2-2.2a2 2 0 0 1 2.8 0L20 15" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'van':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M3 8h12v8H3Z" />
+          <path d="M15 11h3l3 3v2h-6" />
+          <circle cx="8" cy="17" r="1.8" />
+          <circle cx="18" cy="17" r="1.8" />
+        </svg>
+      )
+    case 'hanger':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.6}>
+          <path d="M12 6a2 2 0 1 0-2-2" strokeLinecap="round" />
+          <path d="M10 4a3.5 3.5 0 0 1 3.5 3.5v1L21 13a1 1 0 0 1-.5 1.9H3.5A1 1 0 0 1 3 13l7.5-4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M17 11.8 12 8.8 7 11.8" strokeLinecap="round" />
         </svg>
       )
     default:
@@ -266,7 +344,7 @@ function App() {
     const body = `Nom: ${formData.get('name') || ''}\nTéléphone: ${formData.get('phone') || ''}\nMessage: ${
       formData.get('message') || ''
     }`
-    window.location.href = `mailto:bonjour@atlassense.ma?subject=Demande%20collecte%20Témara&body=${encodeURIComponent(body)}`
+    window.location.href = `mailto:contact@itriclean.ma?subject=Demande%20collecte%20Témara&body=${encodeURIComponent(body)}`
     event.currentTarget.reset()
   }
   return (
@@ -445,19 +523,20 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="about" className="section-offset" aria-labelledby="about-title">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div data-animate className="fade-in-up">
+        <section id="about" className="section-offset white-bleed py-12" aria-labelledby="about-title">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div data-animate className="fade-in-up md:col-span-2">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">À propos</p>
               <h2 id="about-title" className="font-display text-3xl text-brand md:text-4xl">L’expérience textile durable made in Témara</h2>
               <p className="mt-6 text-lg text-muted">
-                Situé à deux minutes de la corniche, {brandName} combine laboratoires d’analyse de l’eau, tunnels UV et équipes couture pour prolonger la durée de vie de vos pièces. Nous privilégions des tensioactifs biosourcés, récupérons 82 % de l’énergie thermique et valorisons l’eau grise pour arroser les espaces verts voisins.
+                ITRI Clean réinvente le pressing éco-responsable pour le linge du quotidien, les vêtements délicats et le textile d’ameublement. Notre promesse : le luxe au prix juste, avec un soin précis qui prolonge la vie de vos pièces tout en limitant fortement l’impact sur l’environnement.
               </p>
-              <ul className="mt-6 space-y-3 text-muted">
-                <li>• Traçabilité de chaque article via QR code et historique de soins</li>
-                <li>• Conseils personnalisés pour les résidences premium de Témara et Rabat</li>
-                <li>• Partenariats hôtels-boutiques & villas avec protocole hygiène hôtelier</li>
-              </ul>
+              <p className="mt-5 text-lg text-muted">
+                Forts de plus de 15 ans d’expérience, nous combinons savoir-faire métier, innovation et technologie au service du client pour garantir un résultat impeccable, constant et maîtrisé.
+              </p>
+              <p className="mt-5 text-lg text-muted">
+                Grâce à des procédés non toxiques et une approche moderne du soin textile — sans perlo (sans perchloroéthylène) — nous préservons vos articles, votre santé et celle de nos équipes, tout en valorisant une durabilité réelle, article après article.
+              </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2" data-animate>
               {pillars.map((pillar) => (
@@ -470,91 +549,176 @@ function App() {
                 </div>
               ))}
             </div>
+            <div className="partner-slider md:col-span-2" aria-label="Logos partenaires" data-animate>
+              <div className="partner-slider-track">
+                {[...partnerLogos, ...partnerLogos].map((partner, index) => (
+                  <div key={`${partner.name}-${index}`} className="partner-logo-card">
+                    <img src={partner.src} alt={`Logo ${partner.name}`} className="h-10 w-auto object-contain" loading="lazy" referrerPolicy="no-referrer" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="services" className="section-offset" aria-labelledby="services-title">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-4" data-animate>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Services</p>
-              <h2 id="services-title" className="font-display text-3xl text-brand md:text-4xl">Des rituels taillés pour vos pièces iconiques</h2>
-              <p className="text-muted md:text-lg">
-                Chaque prestation est calibrée sur mesure : température, dosage et pression sont adaptés à la fibre, puis validés par un second opérateur. Nous couvrons les dressings privés, conciergeries d’immeubles et yachts amarrés à Harhoura.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {services.map((service) => (
-                <article key={service.title} className="fade-in-up rounded-[30px] border border-muted/15 bg-white/80 p-6 shadow-soft/20" data-animate>
-                  <div className="flex items-center gap-4 text-brand">
-                    <span className="rounded-2xl bg-brand/10 p-3">
-                      <Icon name={service.icon as IconName} className="h-6 w-6" />
-                    </span>
-                    <h3 className="text-lg font-semibold">{service.title}</h3>
-                  </div>
-                  <p className="mt-4 text-sm text-muted">{service.description}</p>
+        <section id="services" className="section-offset service-infographic rounded-[36px] border border-brand/15 p-6 md:p-10" aria-labelledby="services-title">
+          <div className="infographic-wrap" data-animate>
+            <p className="text-center text-sm font-semibold uppercase tracking-[0.3em] text-brand/70">Services</p>
+            <h2 id="services-title" className="mt-3 text-center font-display text-3xl text-brand md:text-4xl">Infographie services ITRI</h2>
+
+            <div className="service-layout mt-10">
+              <div className="service-col left">
+                <article className="service-block">
+                  <div className="service-pill"><ServiceGlyph name="cleaning" className="h-7 w-7" /></div>
+                  <h3>Pressing naturel</h3>
+                  <p className="service-subtitle">Aqua nettoyage</p>
+                  <ul className="service-checklist">
+                    {serviceChecklist.map((item) => (
+                      <li key={item}>✓ {item}</li>
+                    ))}
+                  </ul>
                 </article>
-              ))}
+                {serviceBlocksLeft.slice(1).map((block) => (
+                  <article key={block.title} className="service-block">
+                    <div className="service-pill"><ServiceGlyph name={block.icon} className="h-7 w-7" /></div>
+                    <h3>{block.title}</h3>
+                    {'description' in block ? <p>{block.description}</p> : null}
+                    {'detail' in block ? (
+                      <p>
+                        {block.detail} <span className="service-subtle">{block.subtle}</span>
+                      </p>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+
+              <div className="service-center">
+                <div className="center-rings" aria-hidden="true" />
+                <ServiceGlyph name="hanger" className="mx-auto h-20 w-20 text-brand" />
+                <p className="center-brand">ITRI</p>
+                <div className="center-line" />
+                <p className="center-tagline">L’atelier du pressing</p>
+              </div>
+
+              <div className="service-col right">
+                {serviceBlocksRight.map((block) => (
+                  <article key={block.title} className="service-block">
+                    <div className="service-pill"><ServiceGlyph name={block.icon} className="h-7 w-7" /></div>
+                    <h3>{block.title}</h3>
+                    {'description' in block ? <p>{block.description}</p> : null}
+                  </article>
+                ))}
+              </div>
+
+              <article className="service-bottom">
+                <div className="service-pill"><ServiceGlyph name="van" className="h-7 w-7" /></div>
+                <h3>ITRI Clean</h3>
+                <p>Collecte et Livraison express</p>
+              </article>
             </div>
           </div>
         </section>
-        <section id="delivery" className="section-offset" aria-labelledby="delivery-title">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr]">
-            <div className="space-y-6" data-animate>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Delivery</p>
-              <h2 id="delivery-title" className="font-display text-3xl text-brand md:text-4xl">Collecte & dépôt 24/7, même de nuit</h2>
-              <p className="text-muted md:text-lg">
-                Notre flotte électrique couvre toute la bande côtière de Témara avec un délai moyen de 40 minutes. La box ITRI Clean, accessible 24h/24 et 7j/7 devant l’atelier, permet de déposer ou récupérer vos pièces via QR code sécurisé, idéal pour les retours tardifs.
-              </p>
-              <div className="rounded-[32px] border border-brand/10 bg-brand/5 p-6">
-                <div className="flex items-center gap-3 text-brand">
-                  <Icon name="box" className="h-6 w-6" />
-                  <h3 className="text-lg font-semibold">Box autonome Témara Centre</h3>
+        <section id="delivery" className="section-offset bg-white py-16 md:py-20" aria-labelledby="delivery-title">
+          <div className="mx-auto max-w-[1080px] text-center" data-animate>
+            <h2 id="delivery-title" className="font-display text-[3rem] font-semibold uppercase leading-none tracking-[0.04em] text-brand md:text-[4.4rem]">
+              ITRI CLEAN
+            </h2>
+            <p className="mt-7 text-[1.05rem] uppercase italic tracking-[0.03em] text-brand/80 md:text-[1.7rem] md:leading-[1.15]">
+              VOTRE PRESSING ÉCO-RESPONSABLE À DOMICILE
+            </p>
+            <p className="mt-4 text-base italic text-muted/85 md:text-[0.85rem]">* à partir de 79Dh de commande</p>
+
+            <h3 className="mt-16 text-[1.7rem] font-semibold leading-tight text-brand md:text-[2.9rem]">La propreté chez vous en 3 étapes...</h3>
+            <p className="mt-5 text-lg text-text/80 md:text-[1.65rem]">3 étapes simples pour nettoyer vos articles</p>
+
+            <div className="mt-14 grid grid-cols-1 gap-y-10 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-start md:gap-x-4">
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                    <path d="M16.2 11.8c-1.6-1.8-4.2-2.1-6.1-.7l-2.3 1.8c-1.9 1.5-2.6 4.1-1.6 6.3 4.1 9.8 12 17.7 21.8 21.8 2.2 1 4.8.3 6.3-1.6l1.8-2.3c1.4-1.9 1.1-4.5-.7-6.1l-4.8-4.2c-1.5-1.3-3.6-1.5-5.3-.4l-2.4 1.5a30.6 30.6 0 0 1-7.6-7.6l1.5-2.4c1.1-1.7.9-3.8-.4-5.3z" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M30.5 13.2c3.2 1.3 5.8 3.9 7.1 7.1" strokeLinecap="round" />
+                    <path d="M28.4 18.7a9.5 9.5 0 0 1 4.9 4.9" strokeLinecap="round" />
+                  </svg>
                 </div>
-                <p className="mt-3 text-sm text-muted">
-                  Badge NFC ou code envoyé sur WhatsApp, caméra HD et thermomètre connecté pour garantir l’intégrité des pièces, même lors des dépôts nocturnes.
+                <h4 className="mt-6 whitespace-nowrap text-[1.7rem] font-semibold text-brand md:text-[1.8rem]">1-Commande</h4>
+                <p className="mt-5 text-[1.6rem] leading-[1.42] text-text/90 md:text-[0.85rem]">
+                  Réservez votre collecte par<br />
+                  téléphone au{' '}
+                  <a href="tel:+212522993922" className="font-medium text-brand">
+                    0522993922
+                  </a>{' '}
+                  ou<br />
+                  sur WhatsApp au{' '}
+                  <a href="https://wa.me/212667638300" target="_blank" rel="noreferrer" className="font-medium text-brand">
+                    0667638300
+                  </a>
+                  <br />
+                  en suivant les instructions indiquées
                 </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {deliveryPerks.map((perk) => (
-                  <div key={perk} className="fade-in-up rounded-2xl border border-muted/20 bg-white/80 p-4 text-sm font-semibold text-brand" data-animate>
-                    {perk}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-[32px] border border-muted/20 bg-white/90 p-6 shadow-soft/40" data-animate>
-              <div className="flex items-center gap-3 text-brand">
-                <Icon name="calendar" className="h-5 w-5" />
-                <p className="text-sm font-semibold uppercase tracking-[0.3em]">Étapes</p>
-              </div>
-              <div className="mt-6 space-y-6">
-                {deliverySteps.map((step, index) => (
-                  <div key={step.title} className="fade-in-up flex gap-4" data-animate>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/10 text-sm font-semibold text-brand">
-                      {index + 1}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-semibold text-brand">{step.title}</h3>
-                        <span className="text-xs text-muted">{step.time}</span>
-                      </div>
-                      <p className="text-sm text-muted">{step.detail}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <button type="button" onClick={() => scrollToSection('contact')} className="rounded-full bg-brand px-5 py-3 text-sm font-semibold text-ivory">
-                  Devis instantané
-                </button>
-                <a href={whatsappLink} target="_blank" rel="noreferrer" className="rounded-full border border-brand/30 px-5 py-3 text-sm font-semibold text-brand">
-                  WhatsApp concierge
-                </a>
-              </div>
+              </article>
+
+              <span className="hidden self-start md:mt-[8.9rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-6 w-20 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                    <path d="M4 29h4m-4-8h8" strokeLinecap="round" />
+                    <path d="M10 15h20l9 9v11h-3" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M10 15v25h8" strokeLinecap="round" />
+                    <path d="M28 22h8v5h-8z" strokeLinejoin="round" />
+                    <circle cx="15" cy="35" r="3.4" />
+                    <circle cx="33" cy="35" r="3.4" />
+                    <path d="M22 20.2c1.6 1 2.6 2.7 2.6 4.7 0 3.2-2.6 5.8-5.8 5.8" strokeLinecap="round" />
+                    <path d="M19.8 17.4v4.2" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h4 className="mt-6 whitespace-nowrap text-[1.7rem] font-semibold text-brand md:text-[1.8rem]">2-Collecte</h4>
+                <p className="mt-5 text-[1.6rem] leading-[1.42] text-text/90 md:text-[0.85rem]">
+                  Notre livreur vient chez vous
+                  <br />
+                  à la date et horaire convenus
+                  <br />
+                  pour récupérer vos articles
+                </p>
+              </article>
+
+              <span className="hidden self-start md:mt-[8.9rem] md:block" aria-hidden="true">
+                <svg viewBox="0 0 112 18" className="h-6 w-20 text-brand/65" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M1 9h100" strokeLinecap="round" />
+                  <path d="m92 1 9 8-9 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+
+              <article className="mx-auto flex max-w-[16rem] flex-col items-center">
+                <div className="flex h-[6.8rem] w-[6.8rem] items-center justify-center rounded-full bg-brand text-white shadow-soft/40">
+                  <svg viewBox="0 0 48 48" className="h-[3.05rem] w-[3.05rem]" fill="none" stroke="currentColor" strokeWidth="2.1" aria-hidden="true">
+                    <path d="M8 17.8c10-5.1 22-5.1 32 0" strokeLinecap="round" />
+                    <path d="M24 8.8v7.1" strokeLinecap="round" />
+                    <path d="M19 8.8c.9 2.7 3.2 4.2 5 4.2s4.1-1.5 5-4.2" strokeLinecap="round" />
+                    <path d="M13.3 20.8 16.2 43h15.6l2.9-22.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M17 22.5 24 18l7 4.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M24 18v22" strokeLinecap="round" />
+                    <path d="M20.7 25.2h.1m6.4 0h.1m-6.4 4.9h.1m6.4 0h.1" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h4 className="mt-6 whitespace-nowrap text-[1.7rem] font-semibold text-brand md:text-[1.8rem]">3-Livraison</h4>
+                <p className="mt-5 text-[1.6rem] leading-[1.42] text-text/90 md:text-[0.85rem]">
+                  Nous prenons soin de vos articles
+                  <br />
+                  puis nous vous les livrons à
+                  <br />
+                  domicile selon vos préférences
+                </p>
+              </article>
             </div>
           </div>
         </section>
-        <section id="gallery" className="section-offset" aria-labelledby="gallery-title">
+        <section id="gallery" className="section-offset rounded-[36px] border border-brand/10 bg-brand/5 p-8 md:p-12" aria-labelledby="gallery-title">
           <div className="flex flex-col gap-6" data-animate>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Galerie</p>
             <h2 id="gallery-title" className="font-display text-3xl text-brand md:text-4xl">Ambiances ITRI Clean</h2>
@@ -571,23 +735,23 @@ function App() {
             ))}
           </div>
         </section>
-        <section id="contact" className="section-offset" aria-labelledby="contact-title">
+        <section id="contact" className="section-offset white-bleed py-12" aria-labelledby="contact-title">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-6" data-animate>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted">Contact</p>
-              <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Parlez à notre concierge textile</h2>
+              <h2 id="contact-title" className="font-display text-3xl text-brand md:text-4xl">Nous serons heureux de vous écouter</h2>
               <p className="text-muted">
-                Atelier & box : Boulevard Hassan II, Quartier Wifaq – Témara. Zones desservies : Harhoura, Rabat Ouest, Sidi Boughaba.
+                Atelier & box : Boulevard Hassan 2, Témara. On dessert en plus de Témara, essentiellement Harhoura, Hay Riad, les Orangerais, Agdal, Souissi et régions.
               </p>
               <div className="rounded-[30px] border border-muted/20 bg-white/80 p-6 shadow-soft/30">
                 <p className="font-semibold text-brand">Horaires</p>
                 <ul className="mt-3 space-y-2 text-sm text-muted">
-                  <li>Lundi – Samedi : 7h30 - 21h30</li>
-                  <li>Dimanche : 10h - 18h (box 24/7 accessible en continu)</li>
+                  <li>Lundi – Samedi : 8h30 - 21h</li>
+                  <li>Dimanche : 10h - 20h</li>
                 </ul>
                 <div className="mt-4 space-y-1 text-sm text-brand">
                   <a href="tel:+212612345678" className="block font-semibold">+212 6 12 34 56 78</a>
-                  <a href="mailto:bonjour@atlassense.ma" className="block">bonjour@atlassense.ma</a>
+                  <a href="mailto:contact@itriclean.ma" className="block">contact@itriclean.ma</a>
                 </div>
               </div>
               <iframe
@@ -599,7 +763,7 @@ function App() {
               />
             </div>
             <div className="rounded-[32px] border border-muted/25 bg-white/90 p-6 shadow-soft/40" data-animate>
-              <h3 className="text-xl font-semibold text-brand">Brief express</h3>
+              <h3 className="text-xl font-semibold text-brand">On attends votre message</h3>
               <p className="mt-2 text-sm text-muted">
                 Détaillez vos besoins, nous répondons en moins de 15 minutes pendant les horaires d’ouverture.
               </p>
